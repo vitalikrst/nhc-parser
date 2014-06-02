@@ -13,9 +13,16 @@ import java.util.regex.Pattern;
 import util.FileOpts;
 import util.Region;
 
+/**
+ * Source parsing class
+ */
+
 public class HurdatParser {
 	
 	
+	/**
+	 * Returns a list of strings with the following format [name]: MINSPD:[min wind speed] MAXSPD:[max wind speed]
+	 */
 	public static List<String> getHurricaneInfo(Region region, int year) {
 		
 		List<String> result = new ArrayList<>();
@@ -58,6 +65,7 @@ public class HurdatParser {
 		String lastNameLine = "";
 
 		int maxWindSpeed = 0;
+		int minWindSpeed = 0;
 		String hurricaneName = "";
 		
 		/**
@@ -84,10 +92,18 @@ public class HurdatParser {
 					dataMatcher = dataPattern.matcher(line);
 					
 					/**
-					 * determining maximum sustained wind speed in knots
+					 * determining maximum and minimum sustained wind speed in knots
 					 */
 					if (dataMatcher.find()) {
+						
 						int temp = Integer.parseInt(dataMatcher.group(2));
+						
+						if (minWindSpeed == 0) {
+							minWindSpeed = Integer.parseInt(dataMatcher.group(2));
+						}
+						if (temp <= minWindSpeed) {
+							minWindSpeed = temp;
+						}
 						if (temp >= maxWindSpeed) {
 							maxWindSpeed = temp;
 						}
@@ -96,17 +112,18 @@ public class HurdatParser {
 					nameMatcher = namePattern.matcher(line);
 					if (nameMatcher.find()) {
 						/**
-						 * save last match
+						 * save the last match
 						 */
 						lastNameLine = scanner.match().group();
 						break;
 					}
 				}
 			}
-			if (maxWindSpeed > 0 && !hurricaneName.equals("")) {
-				result.add(hurricaneName + ": " + maxWindSpeed + " knots");
+			if (maxWindSpeed > 0 && minWindSpeed > 0 && !hurricaneName.equals("")) {
+				result.add(hurricaneName + ": " + "MINSPD: " + minWindSpeed + " MAXSPD: " + maxWindSpeed);
 			}
 			maxWindSpeed = 0;
+			minWindSpeed = 0;
 		}
 		
 		scanner.close();
