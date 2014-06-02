@@ -6,7 +6,7 @@ Provides a historical hurricane information (name and maximum/minimum sustained 
 Data sources (uses HURDAT2 format) http://www.nhc.noaa.gov/data/hurdat/ <br>
 
 Current input: <br>
-Region (North East basin, Atlantic basin) <br>
+Region (North East/North Central Pacific, Atlantic basin) <br>
 Year <br>
 
 Use source.properties for URL correction. <br>
