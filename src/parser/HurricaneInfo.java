@@ -6,8 +6,8 @@ package parser;
 public class HurricaneInfo {
 
 	private String name;
-	private int maxWindSpeed;
 	private int minWindSpeed;
+	private int maxWindSpeed;
 
 	public String getName() {
 		return name;
@@ -15,14 +15,6 @@ public class HurricaneInfo {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public int getMaxWindSpeed() {
-		return maxWindSpeed;
-	}
-
-	public void setMaxWindSpeed(int maxWindSpeed) {
-		this.maxWindSpeed = maxWindSpeed;
 	}
 
 	public int getMinWindSpeed() {
@@ -33,21 +25,29 @@ public class HurricaneInfo {
 		this.minWindSpeed = minWindSpeed;
 	}
 
+	public int getMaxWindSpeed() {
+		return maxWindSpeed;
+	}
+
+	public void setMaxWindSpeed(int maxWindSpeed) {
+		this.maxWindSpeed = maxWindSpeed;
+	}
+
 	public HurricaneInfo() {
 		super();
 	}
 
-	public HurricaneInfo(String name, int maxWindSpeed, int minWindSpeed) {
+	public HurricaneInfo(String name, int minWindSpeed, int maxWindSpeed) {
 		super();
 		this.name = name;
-		this.maxWindSpeed = maxWindSpeed;
 		this.minWindSpeed = minWindSpeed;
+		this.maxWindSpeed = maxWindSpeed;
 	}
 
 	@Override
 	public String toString() {
-		return "HurricaneInfo [name=" + name + ", maxWindSpeed=" + maxWindSpeed
-				+ ", minWindSpeed=" + minWindSpeed + "]";
+		return "HurricaneInfo [name=" + name + ", minWindSpeed=" + minWindSpeed
+				+ ", maxWindSpeed=" + maxWindSpeed + "]";
 	}
 
 }

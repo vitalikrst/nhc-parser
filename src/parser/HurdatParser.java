@@ -120,7 +120,7 @@ public class HurdatParser {
 				}
 			}
 			if (maxWindSpeed > 0 && minWindSpeed > 0 && !hurricaneName.equals("")) {
-				result.add(new HurricaneInfo(hurricaneName, maxWindSpeed, minWindSpeed));
+				result.add(new HurricaneInfo(hurricaneName, minWindSpeed, maxWindSpeed));
 			}
 			maxWindSpeed = 0;
 			minWindSpeed = 0;
