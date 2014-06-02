@@ -21,11 +21,11 @@ public class HurdatParser {
 	
 	
 	/**
-	 * Returns a list of strings with the following format [name]: MINSPD:[min wind speed] MAXSPD:[max wind speed]
+	 * Returns a list of HurricaneInfo objects
 	 */
-	public static List<String> getHurricaneInfo(Region region, int year) {
+	public static List<HurricaneInfo> getHurricaneInfo(Region region, int year) {
 		
-		List<String> result = new ArrayList<>();
+		List<HurricaneInfo> result = new ArrayList<>();
 		
 		Scanner scanner = FileOpts.getSourceScanner(region);
 		
@@ -120,7 +120,7 @@ public class HurdatParser {
 				}
 			}
 			if (maxWindSpeed > 0 && minWindSpeed > 0 && !hurricaneName.equals("")) {
-				result.add(hurricaneName + ": " + "MINSPD: " + minWindSpeed + " MAXSPD: " + maxWindSpeed);
+				result.add(new HurricaneInfo(hurricaneName, maxWindSpeed, minWindSpeed));
 			}
 			maxWindSpeed = 0;
 			minWindSpeed = 0;
