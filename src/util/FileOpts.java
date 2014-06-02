@@ -15,7 +15,7 @@ public class FileOpts {
 	/**
 	 * Load the data source from the URL and return a Scanner object for source iteration
 	 */
-	Scanner getSourceScanner(Region region) {
+	public static Scanner getSourceScanner(Region region) {
 		
 		URL url = null;
 		Scanner scanner = null;
