@@ -37,14 +37,16 @@ public class HurdatParser {
 		/**
 		 * Pattern for the hurricane name
 		 */
-		Pattern namePattern = Pattern.compile(regexp.getProperty("HURDAT2_NameYear").replaceFirst("year", String.valueOf(year)), Pattern.CASE_INSENSITIVE);
-		//Pattern namePattern = Pattern.compile("([a-z])([a-z])(\\d)(\\d)(" + year + ").*?((?:[a-z][a-z0-9_]*))", Pattern.CASE_INSENSITIVE);
+		Pattern namePattern = Pattern.compile(
+				regexp.getProperty("HURDAT2_NameYear").replaceFirst("year", String.valueOf(year)),
+				Pattern.CASE_INSENSITIVE);
 		
 		/**
 		 * Pattern for the hurricane data
 		 */
-		Pattern dataPattern = Pattern.compile(regexp.getProperty("HURDAT2_DataYear").replaceFirst("year", String.valueOf(year)), Pattern.CASE_INSENSITIVE);
-		//Pattern dataPattern = Pattern.compile("(" + year + ").*?\\d+.*?\\d+.*?\\d+.*?\\d+.*?\\d+.*?(\\d+\\d+)", Pattern.CASE_INSENSITIVE);
+		Pattern dataPattern = Pattern.compile(
+				regexp.getProperty("HURDAT2_DataYear").replaceFirst("year", String.valueOf(year)),
+				Pattern.CASE_INSENSITIVE);
 		
 		/**
 		 * Matchers
