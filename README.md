@@ -8,5 +8,6 @@ Data sources (uses HURDAT2 format) http://www.nhc.noaa.gov/data/hurdat/ <br>
 Current input: <br>
 Region (North East/North Central Pacific, Atlantic basin) <br>
 Year <br>
+Hurricane name <br>
 
 Use source.properties for URL correction. <br>
