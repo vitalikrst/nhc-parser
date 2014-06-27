@@ -19,6 +19,10 @@ public class Nhc {
 				System.out.println(s.toString());
 			}
 		}
+		
+//		HurricaneInfo obj = HurdatParser.getSingleHurricaneInfo(Region.NORTHEAST, "GIL");
+//		
+//		System.out.println(obj.toString());
 
 	}
 

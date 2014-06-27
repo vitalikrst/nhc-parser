@@ -49,5 +49,5 @@ public class HurricaneInfo {
 		return "HurricaneInfo [name=" + name + ", minWindSpeed=" + minWindSpeed
 				+ ", maxWindSpeed=" + maxWindSpeed + "]";
 	}
-
+	
 }
